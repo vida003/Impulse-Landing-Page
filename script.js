@@ -1,5 +1,4 @@
-/* Impulse - interações da landing page */
-document.documentElement.classList.add("js"); // habilita o efeito de revelar as etapas
+document.documentElement.classList.add("js");
 (function(){
 var st=[].slice.call(document.querySelectorAll('.steps li'));
 if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');(function(t){setTimeout(function(){t.classList.add('done')},900)})(e.target);io.unobserve(e.target)}})},{threshold:.25,rootMargin:'0px 0px -6% 0px'});st.forEach(function(l){io.observe(l)})}else{st.forEach(function(l){l.classList.add('vis');l.classList.add('done')})}
